@@ -33,7 +33,7 @@ spec:
       hostname: nova-compute-ironic
       containers:
         - name: nova-compute-ironic
-          image: {{.Values.global.imageRegistry}}/{{.Values.global.image_namespace}}/ubuntu-source-nova-compute:{{.Values.imageVersionNovaCompute | default .Values.imageVersion | required "Please set nova.imageVersion or similar" }}
+          image: {{ tuple . "compute" | include "container_image_nova" }}
           imagePullPolicy: IfNotPresent
           command:
             - kubernetes-entrypoint
