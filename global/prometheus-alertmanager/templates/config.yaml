@@ -65,7 +65,7 @@ data:
         match_re:
           severity: critical
           region: [^.*qa-de-1]
-          tier: openstack|kubernetes|kubernikus
+          tier: openstack|kubernetes
 
       - receiver: pagerduty
         match_re:
